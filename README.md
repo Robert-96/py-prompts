@@ -24,7 +24,7 @@ $ py-prompts set <prompt_name>
 
 ### Add custom prompt
 
-Create a new python file in the `~/.py-prompts/prompts` folder.
+Create a new python file in the `~/.py-prompts/prompts` directory.
 
 You can use this example as a starting point:
 
