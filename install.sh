@@ -59,7 +59,7 @@ main() {
             if [ $? -ne 0 ]; then
                 update_script $file
             else
-                echo "${YELLOW_FG}${BOLD_ON}py-prompts${BOLD_OFF} is already installed.${RESET}"
+                echo "${YELLOW_FG}Warning: ${BOLD_ON}py-prompts${BOLD_OFF} is already installed.${RESET}"
             fi
 
             exit 0
@@ -75,5 +75,6 @@ main() {
 
     exit 1
 }
+
 
 main
