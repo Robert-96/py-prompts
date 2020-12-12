@@ -42,6 +42,7 @@ update_script() {
     echo "# Add .py-prompts to your PATH variable" >> $HOME/$NAME
     echo "export PATH=\"\$PATH:$HOME/.py-prompts\"" >> $HOME/$NAME
     echo "source \$HOME/.py-prompts/current-prompt.sh" >> $HOME/$NAME
+    echo "alias py-prompts='py-prompts.sh'" >> $HOME/$NAME
 
     echo "${GREEN_FG}${BOLD_ON}py-prompts${BOLD_OFF} is now installed on your machine.${RESET}"
 }
@@ -71,6 +72,7 @@ main() {
     echo "${ITALIC_ON}"
     echo "export PATH=\"\$PATH:\$HOME/.py-prompts\""
     echo "source \$HOME/.py-prompts/current-prompt.sh"
+    echo "alias py-prompts='py-prompts.sh'"
     echo "${ITALIC_OFF}${RESET}"
 
     exit 1
