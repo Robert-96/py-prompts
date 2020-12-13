@@ -2,6 +2,8 @@
 
 Custom prompts for Python.
 
+![Demo Gif](demo.gif)
+
 ## Installing
 
 ```
