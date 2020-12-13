@@ -6,12 +6,15 @@ class IPythonPromptPS1(object):
     def __init__(self):
         self.line = 0
 
-    def __str__(self):
-        self.line += 1
+    def prompt(self):
         return "In [%d] >>> " % (self.line)
 
+    def __str__(self):
+        self.line += 1
+        return self.prompt()
+
     def __len__(self):
-        return len(str(self))
+        return len(self.prompt())
 
 
 class IPythonPromptPS2(object):
