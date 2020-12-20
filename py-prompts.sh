@@ -33,7 +33,7 @@ print_help() {
 
 
 print_list() {
-    echo "${BOLD_ON}Available prompts:${BOLD_OFF}"
+    echo "${BOLD_ON}Available Prompts:${BOLD_OFF}"
     echo "${YELLOW_FG}${ITALIC_ON}"
     ls $HOME/.py-prompts/prompts | awk -F. '{ print "  "$1 }'
     echo "${RESET}"
