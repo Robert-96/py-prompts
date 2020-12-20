@@ -35,8 +35,12 @@ print_help() {
 print_list() {
     echo "${BOLD_ON}Available prompts:${BOLD_OFF}"
     echo "${YELLOW_FG}${ITALIC_ON}"
-    ls $HOME/.py-prompts/prompts | awk -F. '{print "  "$1}'
+    ls $HOME/.py-prompts/prompts | awk -F. '{ print "  "$1 }'
     echo "${RESET}"
+
+    CURRENT_PROMPT=`cat $HOME/.py-prompts/current-prompt.sh | grep "export" | sed -e 's+export PYTHONSTARTUP=$HOME/.py-prompts/prompts/++' | awk -F. '{print $1}'`
+    echo "${BOLD_ON}Current Prompt:${BOLD_OFF} ${GREEN_FG}${ITALIC_ON}$CURRENT_PROMPT${RESET}"
+    echo ""
 }
 
 
@@ -67,6 +71,7 @@ set_prompt() {
 
     echo "${BOLD_ON}${GREEN_FG}The prompt was set successfully!${RESET}"
     echo "${YELLOW_FG}Note: The changes will take effect from the next terminal session.${RESET}"
+    echo ""
 }
 
 
