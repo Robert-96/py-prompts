@@ -7,7 +7,7 @@ Custom prompts for Python.
 ## Installing
 
 ```
-$ curl -L https://raw.githubusercontent.com/Robert-96/py-prompts/master/install.sh | sh
+$ curl -L https://raw.githubusercontent.com/Robert-96/py-prompts/main/install.sh | sh
 ```
 
 ## Quickstart
