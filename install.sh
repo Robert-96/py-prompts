@@ -33,7 +33,7 @@ clone_repo() {
 
 
 update_script() {
-    NAME=$1
+    local NAME=$1
 
     echo "Login script detected: ${BOLD_ON}${BLUE_FG}$NAME${RESET}."
     echo "Updating PATH variable and exporting it through ${BOLD_ON}${BLUE_FG}$HOME/$NAME${RESET}."
@@ -51,7 +51,7 @@ update_script() {
 main() {
     clone_repo
 
-    FILES=( ".zshrc" ".bashrc" ".bash_profile" ".profile" )
+    local FILES=( ".zshrc" ".bashrc" ".bash_profile" ".profile" )
 
     for file in "${FILES[@]}"; do
         if [ -f $HOME/$file ]; then

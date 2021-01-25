@@ -33,20 +33,21 @@ print_help() {
 
 
 print_list() {
+    local CURRENT_PROMPT=`cat $HOME/.py-prompts/current-prompt.sh | grep "export" | sed -e 's+export PYTHONSTARTUP=$HOME/.py-prompts/prompts/++' | awk -F. '{print $1}'`
+
     echo "${BOLD_ON}Available Prompts:${BOLD_OFF}"
     echo "${YELLOW_FG}${ITALIC_ON}"
     ls $HOME/.py-prompts/prompts | awk -F. '{ print "  "$1 }'
     echo "${RESET}"
 
-    CURRENT_PROMPT=`cat $HOME/.py-prompts/current-prompt.sh | grep "export" | sed -e 's+export PYTHONSTARTUP=$HOME/.py-prompts/prompts/++' | awk -F. '{print $1}'`
     echo "${BOLD_ON}Current Prompt:${BOLD_OFF} ${GREEN_FG}${ITALIC_ON}$CURRENT_PROMPT${RESET}"
     echo ""
 }
 
 
 set_prompt() {
-    PROMPT=$1
-    FILE="$HOME/.py-prompts/current-prompt.sh"
+    local PROMPT=$1
+    local FILE="$HOME/.py-prompts/current-prompt.sh"
 
     if [ -z "$PROMPT" ]; then
         echo "${RED_FG}Error: Usage - py-prompts set ${BOLD_ON}<PROMPT_NAME>${RESET}"
